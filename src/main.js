@@ -1,10 +1,15 @@
+import './styles.css';
+import $ from 'jquery';
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 $(document).ready(function() {
   $('#finddoctor').click(function() {
     let doctor = $('#docsearch').val();
     $('#docsearch').val("");
 
     let request = new XMLHttpRequest();
-    let url = `https://api.betterdoctor.com/2016-03-01/doctors?=${doctor}location=45.522,-122.682,100&skip=2&limit=10&user_key=772567d7e5113ceaeea1ac0b1cd56630`
+    let url = `https://api.betterdoctor.com/2016-03-01/doctors?location=45.522,-122.682,100&skip=2&limit=10&user_key=772567d7e5113ceaeea1ac0b1cd56630`
 
     console.log(url);
     request.onreadystatechange = function() {
@@ -20,7 +25,7 @@ $(document).ready(function() {
     function getElements(response) { //hoisted, it can be declared AFTER it is called
     // getElements = function(response) { //unhoisted function, it is declared as a variable IN ITS POSITION
       $('.showDoctor').text(`Name ${doctor} ${response.practices.name}`);
-      $('.showTemp').text(`Address: ${response.visit_address.street}`);
+      $('.showAddress').text(`Address: ${response.visit_address.street}`);
     }
   });
 });
