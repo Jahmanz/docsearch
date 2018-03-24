@@ -1,4 +1,3 @@
-const Dotenv = require('dotenv-webpack')
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -19,11 +18,10 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'docsearch',
+      title: 'Pandemic',
       template: './src/index.html',
       inject: 'body'
-    }),
-    new Dotenv()
+    })
   ],
   module: {
     rules: [
@@ -34,6 +32,11 @@ module.exports = {
           'css-loader'
         ]
       },
+      // {
+      //   test: /\.js$/,
+      //   exclude: /node_modules/,
+      //   loader: "eslint-loader"
+      // },
       {
         test: /\.js$/,
         exclude: [
@@ -47,4 +50,4 @@ module.exports = {
       }
     ]
   }
-};
+}
