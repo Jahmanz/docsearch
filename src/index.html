@@ -5,9 +5,15 @@
   </head>
 <body>
   <h1>Find your Portland Doctor!</h1>
-  <form id="searchform" class="form-control" method="post">
-    <label for="docsearch">Enter a name</label>
+  <form id="searchdoc" class="form-control" method="post">
+    <label for="docsearch">Search by name:</label>
     <input id="docsearch" type="text" name="docsearch">
+    <button type="submit" class="btn btn-warning">Search</button>
+  </form>
+
+  <form id="searchspecialty" class="form-control" method="post">
+    <label for="specialtysearch">search by specialty:</label>
+    <input id="specialtysearch" type="text" name="specialtysearch">
     <button type="submit" class="btn btn-warning">Search</button>
   </form>
 
@@ -16,7 +22,8 @@
 
     </div>
 
-    <div id="errors">
+
+    <div id="errorMessage">
 
     </div>
   </body>
