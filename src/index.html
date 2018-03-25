@@ -1,16 +1,28 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Portland Doctor</title>
-  </head>
-  <body>
-    <div class="container">
-      <h1>Find your Portland Doctor!</h1>
-      <label for="docsearch">Doctor's name:</label>
-      <input id="docsearch" type="text">
-      <button class="btn-success" id="finddoctor">Seach for your doctor!</button>
-      <div class="errors"></div>
-      <div class="showDoctor"></div>
-      <div class="showAddress"></div>
-    </div>
-  </body>
+<head>
+  <title>Portland Doctor</title>
+</head>
+<body>
+  <h1>Find your Portland Doctor!</h1>
+  <form id="searchform" class="form-control" method="post">
+    <label for="docsearch">Enter a name</label>
+    <input id="docsearch" type="text" name="docsearch">
+    <button type="submit" class="btn btn-warning">Search</button>
+  </form>
+
+</div>
+<center><div id="results"></center>
+
+</div>
+</div>
+
+
+<div id="errors">
+
+</div>
+
+</div>
+
+</body>
 </html>
